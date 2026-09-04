@@ -1,4 +1,4 @@
-package ni.edu.uam.torneo_deportivo;
+package ni.edu.uam.torneo_deportivo.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
