@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true"
+            prefHeight="700.0"
+            prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ni.edu.uam.torneo_deportivo.controllers.ActualizarParticipanteController">
+
+    <content>
+        <VBox spacing="14">
+            <padding>
+                <Insets top="25" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <Label text="Actualizar datos del participante"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <Label text="Seleccione un participante en la tabla."/>
+
+            <TableView fx:id="tablaParticipantes"
+                       prefHeight="260">
+                <columns>
+                    <TableColumn fx:id="colNombre"
+                                 text="Nombre"
+                                 prefWidth="160"/>
+                    <TableColumn fx:id="colEdad"
+                                 text="Edad"
+                                 prefWidth="60"/>
+                    <TableColumn fx:id="colCategoria"
+                                 text="Categoría"
+                                 prefWidth="100"/>
+                    <TableColumn fx:id="colModalidad"
+                                 text="Modalidad"
+                                 prefWidth="100"/>
+                    <TableColumn fx:id="colDisciplina"
+                                 text="Disciplina"
+                                 prefWidth="110"/>
+                    <TableColumn fx:id="colCaracteristicas"
+                                 text="Características"
+                                 prefWidth="260"/>
+                    <TableColumn fx:id="colEstado"
+                                 text="Estado"
+                                 prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <Separator/>
+
+            <GridPane hgap="12" vgap="10">
+                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNombre"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Edad:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtEdad"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTelefono"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Categoría:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbCategoria"
+                          prefWidth="220"
+                          GridPane.rowIndex="3"
+                          GridPane.columnIndex="1"/>
+
+                <Label text="Género:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbGenero"
+                          prefWidth="220"
+                          GridPane.rowIndex="4"
+                          GridPane.columnIndex="1"/>
+
+                <Label text="Modalidad:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbModalidad"
+                          prefWidth="220"
+                          GridPane.rowIndex="5"
+                          GridPane.columnIndex="1"/>
+
+                <Label text="Disciplina:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbDisciplina"
+                          prefWidth="220"
+                          GridPane.rowIndex="6"
+                          GridPane.columnIndex="1"/>
+
+                <Label text="Estado:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtEstado"
+                           GridPane.rowIndex="7"
+                           GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Label text="Características"/>
+            <HBox spacing="12">
+                <CheckBox fx:id="chkFederado" text="Federado"/>
+                <CheckBox fx:id="chkExperiencia" text="Experiencia previa"/>
+                <CheckBox fx:id="chkDisponibilidad" text="Disponibilidad fin de semana"/>
+                <CheckBox fx:id="chkSeguro" text="Seguro deportivo"/>
+            </HBox>
+
+            <Label fx:id="lblMensaje"
+                   wrapText="true"
+                   style="-fx-font-weight: bold;"/>
+
+            <HBox spacing="15">
+                <Button text="Actualizar seleccionado"
+                        onAction="#onActualizar"
+                        prefWidth="190"/>
+
+                <Button text="Atrás"
+                        onAction="#onAtras"
+                        prefWidth="120"/>
+            </HBox>
+        </VBox>
+    </content>
+
+</ScrollPane>
