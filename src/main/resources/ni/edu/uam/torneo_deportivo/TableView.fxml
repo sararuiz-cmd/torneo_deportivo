@@ -8,10 +8,11 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <ScrollPane fitToWidth="true"
             prefHeight="700.0"
@@ -21,73 +22,67 @@
             fx:controller="ni.edu.uam.torneo_deportivo.controllers.TableviewController">
 
     <content>
-        <VBox spacing="12.0">
+        <VBox spacing="15.0">
             <padding>
-                <Insets top="25" right="60" bottom="30" left="60"/>
+                <Insets top="25" right="50" bottom="25" left="50"/>
             </padding>
 
-            <Label text="Registro de Participantes"
-                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label text="Registro de participante">
+                <font>
+                    <Font size="22.0"/>
+                </font>
+            </Label>
 
-            <Separator/>
+            <GridPane hgap="15" vgap="12">
+                <Label text="Nombre completo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="NombreCompleto" promptText="Nombre completo"
+                           prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-            <Label text="Nombre completo"/>
-            <TextField fx:id="NombreCompleto"
-                       promptText="Ingrese nombre completo"/>
+                <Label text="Edad:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="Edad" promptText="Edad"
+                           prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-            <Label text="Edad"/>
-            <TextField fx:id="Edad"
-                       promptText="Edad entre 15 y 60"/>
+                <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="telefono" promptText="Teléfono"
+                           prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-            <Label text="Teléfono"/>
-            <TextField fx:id="telefono"
-                       promptText="Solo números"/>
+                <Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="categoria" promptText="Seleccione"
+                          prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-            <Label text="Categoría"/>
-            <ComboBox fx:id="categoria"
-                      prefWidth="300"
-                      promptText="Seleccione una categoría"/>
+                <Label text="Género:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <HBox spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <RadioButton fx:id="femenino" text="Femenino"/>
+                    <RadioButton fx:id="masculino" text="Masculino"/>
+                </HBox>
 
-            <Label text="Género"/>
-            <HBox spacing="20">
-                <RadioButton fx:id="femenino" text="Femenino"/>
-                <RadioButton fx:id="masculino" text="Masculino"/>
-            </HBox>
+                <Label text="Modalidad:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <HBox spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <RadioButton fx:id="individual" text="Individual"/>
+                    <RadioButton fx:id="pareja" text="Pareja"/>
+                    <RadioButton fx:id="equipo" text="Equipo"/>
+                </HBox>
+            </GridPane>
 
-            <Label text="Modalidad"/>
-            <HBox spacing="20">
-                <RadioButton fx:id="individual" text="Individual"/>
-                <RadioButton fx:id="pareja" text="Pareja"/>
-                <RadioButton fx:id="equipo" text="Equipo"/>
-            </HBox>
+            <Label text="Características:"/>
 
-            <Label text="Características"/>
-            <VBox spacing="6">
+            <VBox spacing="5">
                 <CheckBox fx:id="federado" text="Federado"/>
                 <CheckBox fx:id="experiencia" text="Experiencia previa"/>
                 <CheckBox fx:id="dispo" text="Disponibilidad fines de semana"/>
                 <CheckBox fx:id="seguro" text="Seguro deportivo"/>
             </VBox>
 
-            <Label text="Disciplina"/>
-            <ListView fx:id="lista"
-                      prefHeight="150"
-                      prefWidth="350"/>
+            <Label text="Disciplina:"/>
 
-            <Label fx:id="mensaje"
-                   wrapText="true"
-                   style="-fx-font-weight: bold;"/>
+            <ListView fx:id="lista" prefHeight="130" prefWidth="350" maxWidth="350"/>
 
-            <HBox spacing="15">
-                <Button text="Registrar participante"
-                        onAction="#onRegistrar"
-                        prefWidth="190"/>
+            <Label fx:id="mensaje" wrapText="true"/>
 
-                <Button text="Atrás"
-                        onAction="#onAtras"
-                        prefWidth="120"/>
+            <HBox spacing="12">
+                <Button text="Registrar" prefWidth="120" onAction="#onRegistrar"/>
+                <Button text="Atrás" prefWidth="100" onAction="#onAtras"/>
             </HBox>
         </VBox>
     </content>
-
 </ScrollPane>

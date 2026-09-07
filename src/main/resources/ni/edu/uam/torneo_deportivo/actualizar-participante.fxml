@@ -6,13 +6,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <ScrollPane fitToWidth="true"
             prefHeight="700.0"
@@ -22,113 +22,80 @@
             fx:controller="ni.edu.uam.torneo_deportivo.controllers.ActualizarParticipanteController">
 
     <content>
-        <VBox spacing="14">
+        <VBox spacing="15">
             <padding>
-                <Insets top="25" right="30" bottom="30" left="30"/>
+                <Insets top="20" right="25" bottom="25" left="25"/>
             </padding>
 
-            <Label text="Actualizar datos del participante"
-                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label text="Actualizar participante">
+                <font>
+                    <Font size="22.0"/>
+                </font>
+            </Label>
 
-            <Label text="Seleccione un participante en la tabla."/>
+            <Label text="Seleccione un participante de la tabla para editar sus datos."/>
 
-            <TableView fx:id="tablaParticipantes"
-                       prefHeight="260">
+            <TableView fx:id="tablaParticipantes" prefHeight="240">
                 <columns>
-                    <TableColumn fx:id="colNombre"
-                                 text="Nombre"
-                                 prefWidth="160"/>
-                    <TableColumn fx:id="colEdad"
-                                 text="Edad"
-                                 prefWidth="60"/>
-                    <TableColumn fx:id="colCategoria"
-                                 text="Categoría"
-                                 prefWidth="100"/>
-                    <TableColumn fx:id="colModalidad"
-                                 text="Modalidad"
-                                 prefWidth="100"/>
-                    <TableColumn fx:id="colDisciplina"
-                                 text="Disciplina"
-                                 prefWidth="110"/>
-                    <TableColumn fx:id="colCaracteristicas"
-                                 text="Características"
-                                 prefWidth="260"/>
-                    <TableColumn fx:id="colEstado"
-                                 text="Estado"
-                                 prefWidth="100"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colEdad" text="Edad" prefWidth="60"/>
+                    <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="95"/>
+                    <TableColumn fx:id="colModalidad" text="Modalidad" prefWidth="95"/>
+                    <TableColumn fx:id="colDisciplina" text="Disciplina" prefWidth="100"/>
+                    <TableColumn fx:id="colCaracteristicas" text="Características" prefWidth="260"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="90"/>
                 </columns>
             </TableView>
 
-            <Separator/>
+            <GridPane hgap="15" vgap="10">
+                <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtNombre" prefWidth="250"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-            <GridPane hgap="12" vgap="10">
-                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                <TextField fx:id="txtNombre"
-                           GridPane.rowIndex="0"
-                           GridPane.columnIndex="1"/>
+                <Label text="Edad:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtEdad" prefWidth="250"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-                <Label text="Edad:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                <TextField fx:id="txtEdad"
-                           GridPane.rowIndex="1"
-                           GridPane.columnIndex="1"/>
+                <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtTelefono" prefWidth="250"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-                <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                <TextField fx:id="txtTelefono"
-                           GridPane.rowIndex="2"
-                           GridPane.columnIndex="1"/>
+                <Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="cbCategoria" prefWidth="250"
+                          GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                <Label text="Categoría:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-                <ComboBox fx:id="cbCategoria"
-                          prefWidth="220"
-                          GridPane.rowIndex="3"
-                          GridPane.columnIndex="1"/>
+                <Label text="Género:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="cbGenero" prefWidth="220"
+                          GridPane.columnIndex="3" GridPane.rowIndex="0"/>
 
-                <Label text="Género:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-                <ComboBox fx:id="cbGenero"
-                          prefWidth="220"
-                          GridPane.rowIndex="4"
-                          GridPane.columnIndex="1"/>
+                <Label text="Modalidad:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="cbModalidad" prefWidth="220"
+                          GridPane.columnIndex="3" GridPane.rowIndex="1"/>
 
-                <Label text="Modalidad:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-                <ComboBox fx:id="cbModalidad"
-                          prefWidth="220"
-                          GridPane.rowIndex="5"
-                          GridPane.columnIndex="1"/>
+                <Label text="Disciplina:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <ComboBox fx:id="cbDisciplina" prefWidth="220"
+                          GridPane.columnIndex="3" GridPane.rowIndex="2"/>
 
-                <Label text="Disciplina:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-                <ComboBox fx:id="cbDisciplina"
-                          prefWidth="220"
-                          GridPane.rowIndex="6"
-                          GridPane.columnIndex="1"/>
-
-                <Label text="Estado:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
-                <TextField fx:id="txtEstado"
-                           GridPane.rowIndex="7"
-                           GridPane.columnIndex="1"/>
+                <Label text="Estado:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtEstado" prefWidth="220"
+                           GridPane.columnIndex="3" GridPane.rowIndex="3"/>
             </GridPane>
 
-            <Label text="Características"/>
+            <Label text="Características:"/>
+
             <HBox spacing="12">
                 <CheckBox fx:id="chkFederado" text="Federado"/>
                 <CheckBox fx:id="chkExperiencia" text="Experiencia previa"/>
-                <CheckBox fx:id="chkDisponibilidad" text="Disponibilidad fin de semana"/>
+                <CheckBox fx:id="chkDisponibilidad" text="Disponible fin de semana"/>
                 <CheckBox fx:id="chkSeguro" text="Seguro deportivo"/>
             </HBox>
 
-            <Label fx:id="lblMensaje"
-                   wrapText="true"
-                   style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblMensaje" wrapText="true"/>
 
-            <HBox spacing="15">
-                <Button text="Actualizar seleccionado"
-                        onAction="#onActualizar"
-                        prefWidth="190"/>
-
-                <Button text="Atrás"
-                        onAction="#onAtras"
-                        prefWidth="120"/>
+            <HBox spacing="12">
+                <Button text="Actualizar" prefWidth="120" onAction="#onActualizar"/>
+                <Button text="Atrás" prefWidth="100" onAction="#onAtras"/>
             </HBox>
         </VBox>
     </content>
-
 </ScrollPane>
