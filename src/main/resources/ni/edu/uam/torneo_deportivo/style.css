@@ -1,0 +1,33 @@
+/* Fondo general */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f0f8ff, #d6eaf8);
+}
+
+/* Etiquetas */
+.label {
+    -fx-text-fill: #3B75B8;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #1A584D;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Tabla */
+.table-view {
+    -fx-background-color: #F0E2E1;
+    -fx-border-color: #3498db;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
