@@ -10,7 +10,6 @@
       spacing="18.0"
       prefHeight="700.0"
       prefWidth="1000.0"
-      stylesheets="style.css"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ni.edu.uam.torneo_deportivo.controllers.PrincipalController">
@@ -19,7 +18,6 @@
         <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
-    <Label text="Bienvenido al menu principal del torneo deportivo">
         <font>
             <Font size="24.0"/>
         </font>
